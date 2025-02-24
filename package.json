@@ -15,7 +15,8 @@
     "sonata-collection symfony",
     "sonata-symfony",
     "Admin backoffice",
-    "sonata-admin-bundle"
+    "sonata-admin-bundle",
+    "sonata", "react", "admin", "components"
   ],
   "author": "AGBOKOUDJO Hounha Franck",
    "repository": {
