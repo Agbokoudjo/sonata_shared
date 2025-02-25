@@ -1,7 +1,14 @@
 {
   "name": "@wlindabla/sonata_shared",
-  "private": false,
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A shared component library for SonataAdmin and React-based admin panels.",
   "keywords": [
     "sonataAdmin Bundle",
@@ -16,19 +23,26 @@
     "sonata-symfony",
     "Admin backoffice",
     "sonata-admin-bundle",
-    "sonata", "react", "admin", "components"
+    "sonata",
+    "react",
+    "admin",
+    "components"
   ],
   "author": "AGBOKOUDJO Hounha Franck",
-   "repository": {
+  "repository": {
     "type": "git",
-    "url": "https://github.com/Agbokoudjo/sonata_shared.git"
+    "url": "git+https://github.com/Agbokoudjo/sonata_shared.git"
   },
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc --build --clean && tsc --build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "yarn clean && yarn build",
+    "prepare": "yarn build",
+    "type-check": "tsc --build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -36,6 +50,8 @@
     "@mui/icons-material": "^6.4.5",
     "@mui/material": "^6.4.5",
     "@mui/styled-engine-sc": "^6.4.3",
+    "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "styled-components": "^6.1.15",
@@ -43,6 +59,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@types/path-browserify": "^1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
