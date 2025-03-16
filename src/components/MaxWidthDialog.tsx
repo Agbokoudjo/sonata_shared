@@ -2,7 +2,7 @@
  * This file is part of the project by AGBOKOUDJO Franck.
  *
  * (c) AGBOKOUDJO Franck <franckagbokoudjo301@gmail.com>
- * Phone: +229 67 25 18 86
+ * Phone: +229 0167 25 18 86
  * LinkedIn: https://www.linkedin.com/in/internationales-web-services-120520193/
  * Company: INTERNATIONALES WEB SERVICES
  * [GitHub - Agbokoudjo/sonata_shared](https://github.com/Agbokoudjo/sonata_shared)
@@ -32,7 +32,7 @@ interface MaxWidthDialogOptions{
     contextId:string;
     classNameSwitch?:string[];
 }
-const MaxWidthDialog: React.FC<MaxWidthDialogOptions> = memo(({ 
+export const MaxWidthDialog: React.FC<MaxWidthDialogOptions> = memo(({ 
     contextId ,
     classNameFormControl,
     sxFormControl,
@@ -125,5 +125,3 @@ const MaxWidthDialog: React.FC<MaxWidthDialogOptions> = memo(({
     </div>
   );
 });
-
-export default MaxWidthDialog;

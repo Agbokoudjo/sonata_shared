@@ -14,7 +14,7 @@
     "moduleResolution": "bundler",
      "allowJs": false,   
     "allowImportingTsExtensions":false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "moduleDetection": "force",
     "noEmit":false,   
     "jsx": "react-jsx",

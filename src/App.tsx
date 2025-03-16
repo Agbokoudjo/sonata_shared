@@ -21,7 +21,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useDialogStore from './store/useDialogStore'
-import MaxWidthDialog from './components/MaxWidthDialog'
+import {MaxWidthDialog} from './components/MaxWidthDialog'
 export function MaxWidthDialogApp() {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
