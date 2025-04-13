@@ -17,7 +17,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
-import useDialogStore from '../store/useDialogStore';
+import { DialogStore,useDialogStore } from '../store/useDialogStore';
 import { SxProps } from '@mui/material';
 
 interface MaxWidthDialogOptions{
@@ -44,10 +44,10 @@ export const MaxWidthDialog: React.FC<MaxWidthDialogOptions> = memo(({
     sxMenuItem,
     classNameSwitch
 }) => {
-  const fullWidth = useDialogStore((state) => state[contextId]?.fullWidth ?? true);
-  const maxWidth = useDialogStore((state) => state[contextId]?.maxWidth ?? 'xl');
-  const setFullWidth = useDialogStore((state) => state.setFullWidth);
-  const setMaxWidth = useDialogStore((state) => state.setMaxWidth);
+  const fullWidth = useDialogStore((state:DialogStore) => state[contextId]?.fullWidth ?? true);
+  const maxWidth = useDialogStore((state:DialogStore) => state[contextId]?.maxWidth ?? 'xl');
+  const setFullWidth = useDialogStore((state:DialogStore) => state.setFullWidth);
+  const setMaxWidth = useDialogStore((state:DialogStore) => state.setMaxWidth);
   const handleMaxWidthChange = (event:SelectChangeEvent<typeof maxWidth>) => {
     setMaxWidth(contextId, event.target.value as typeof maxWidth );
   };

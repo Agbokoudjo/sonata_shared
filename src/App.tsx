@@ -20,7 +20,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useDialogStore from './store/useDialogStore'
+import {DialogStore, useDialogStore} from './store/useDialogStore'
 import {MaxWidthDialog} from './components/MaxWidthDialog'
 export function MaxWidthDialogApp() {
   const [open, setOpen] = useState(false);
@@ -39,8 +39,8 @@ export function MaxWidthDialogApp() {
         Open max-width dialog
       </Button>
       <Dialog
-        fullWidth={useDialogStore((state)=> state['exempleId']?.fullWidth)}
-        maxWidth={useDialogStore((state)=> state['exempleId']?.maxWidth)}
+        fullWidth={useDialogStore((state:DialogStore)=> state['exempleId']?.fullWidth)}
+        maxWidth={useDialogStore((state:DialogStore)=> state['exempleId']?.maxWidth)}
         open={open}
         onClose={handleClose}
       >

@@ -17,9 +17,9 @@ type DialogStoreAction={
     setFullWidth: (contextId: string, fullWidthDialog:boolean) => void;
     setMaxWidth: (contextId: string, maxWidthDialog:DialogProps['maxWidth']) => void;
 }
-type DialogStore=DialogStoreState & DialogStoreAction
+export type DialogStore=DialogStoreState & DialogStoreAction
   
-const useDialogStore = create<DialogStore>((set) => ({
+export const useDialogStore = create<DialogStore>((set) => ({
   // Initial state can be an empty object or pre-defined states for each contextId
   setFullWidth: (contextId:string,fullWidthDialog:boolean) => set((state) => ({
     ...state,
@@ -40,4 +40,3 @@ const useDialogStore = create<DialogStore>((set) => ({
   }))
 }));
 
-export default useDialogStore;
